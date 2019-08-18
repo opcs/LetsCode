@@ -1,0 +1,27 @@
+How BlockingQueue work ?
+if data not available, it wait(block thread) and once available it fetches - poor resource utilization
+
+ implementations are designed to be used primarily for producer-consumer queues, but additionally support
+  the  java.util.Collection interface.  So, for example, it is possible to remove an arbitrary element from a queue using remove(x). However, such operations are only occasional use, such as when a queued message is cancelled.
+  BlockingQueue can safely be used with multiple producers and multiple consumers.
+
+BlockingQueue methods come in four forms
+1. Throws exception ->Ex... Implementations throw ISE/NPE on attempts to add, put or offer a null.  A null value indicate failure of poll operations.
+
+2. returns a special value -> null/false, depending on the operation
+
+3. blocks the current thread indefinitely until the operation can succeed ->  BlockingQueue may be capacity bounded. At any given time it may have a remainingCapacity beyond which no additional elements can be put without blocking.
+
+4. Times out -> operation with timeout
+Insert operation
+boolean add(E e) ->true upon success IllegalStateException on failure due to no space available
+boolean offer(E e) -> true on success and false if no space
+void put(E e) throws InterruptedException    ->wait if no space available
+boolean offer(E e, long timeout, TimeUnit unit) throws InterruptedException -> wait for limited time
+
+Remove Operation
+boolean remove(Object o) -> Remove specified element from this queue
+poll() ->
+E take() throws InterruptedException ->waiting until an element becomes available.
+E poll(long timeout, TimeUnit unit)throws InterruptedException ->wait for limited time, if no element present
+
