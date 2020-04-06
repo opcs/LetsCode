@@ -12,9 +12,9 @@ public class MyDeadLock {
 
         public void run() {
             synchronized (String.class) {
-                System.out.println("name_block1: " + Thread.currentThread().getName());
+                System.out.println("string_block1: " + Thread.currentThread().getName());
                 synchronized (Integer.class) {
-                    System.out.println("city_block1: " + Thread.currentThread().getName());
+                    System.out.println("integer_block2: " + Thread.currentThread().getName());
                 }
             }
         }
@@ -24,9 +24,9 @@ public class MyDeadLock {
 
         public void run() {
             synchronized (Integer.class) {
-                System.out.println("city_block2: " + Thread.currentThread().getName());
+                System.out.println("integer_block1: " + Thread.currentThread().getName());
                 synchronized (String.class) {
-                    System.out.println("name_block2: " + Thread.currentThread().getName());
+                    System.out.println("string_block2: " + Thread.currentThread().getName());
                 }
             }
         }

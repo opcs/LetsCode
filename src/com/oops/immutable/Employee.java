@@ -1,67 +1,40 @@
-/**
- * Copyright (c) 2017 GT Nexus. All Rights Reserved.
- */
 package com.oops.immutable;
 
- final class Employee {
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
 
-    private final int id;
-    private Address address;
+public final class  Employee {
+	private final int id;
+	private final String name;
+	private final List<String> projects;
+	private final Date doj;
+	
+	public Employee(int id, String name, List<String> projects, Date doj) {
+		this.name = name;
+		this.projects = projects;
+		this.doj=doj;
+		this.id=id;
+		
+	}
+	
 
-    public Employee(int id, final Address address)
-    {
-        this.id = id;
-        // use defensive copy to make it immutable
-        this.address = new Address(address.getStreetName(), address.getStreetNumber());
-    }
+	public int getId() {
+		return id;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public Address getAddress() {
-        return address;
-    }
+	public List<String> getProjects() {
+		return Collections.unmodifiableList(projects);
+	}
 
-    @Override
-    public String toString() {
-        return "Employee [id=" + id + ", address=" + address + "]";
-    }
-
-}
-
-class Address {
-
-    public Address() {
-    }
-
-    public Address(String streetName, int streetNumber) {
-        this.streetName = streetName;
-        this.streetNumber = streetNumber;
-    }
-
-    private String streetName;
-    private int streetNumber;
-
-    public String getStreetName() {
-        return streetName;
-    }
-
-    public void setStreetName(String streetName) {
-        this.streetName = streetName;
-    }
-
-    public int getStreetNumber() {
-        return streetNumber;
-    }
-
-    public void setStreetNumber(int streetNumber) {
-        this.streetNumber = streetNumber;
-    }
-
-    @Override
-    public String toString() {
-        return "Address [streetName=" + streetName + ", streetNumber=" + streetNumber + "]";
-    }
+	public Date getDoj() {
+		return new Date(doj.getTime());
+	}
+	
+	
 
 }

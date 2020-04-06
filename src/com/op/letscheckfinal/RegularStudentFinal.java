@@ -1,6 +1,7 @@
 package com.op.letscheckfinal;
 
-// making constructor private and all fields private final is another way of making an Immutable class.
+// making constructor private and all fields private final 
+// is another way of making an Immutable class.
 
 public class RegularStudentFinal{
 

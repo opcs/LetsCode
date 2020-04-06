@@ -1,6 +1,3 @@
-/**
- * Copyright (c) 2017 GT Nexus. All Rights Reserved.
- */
 package com.code.thread.oddevenPrinter;
 
 public class OddEvenPrinterTest {

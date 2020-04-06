@@ -9,7 +9,7 @@ import java.nio.file.StandardOpenOption;
 public class LargeFileSplit {
 
 	public static void main(String[] args) {
-		Path bigFile = Paths.get("G:\\DesktopBkUp\\LargeFiles\\all_classes_del.txt");
+		Path bigFile = Paths.get("G:\\DesktopBkUp\\InpLargeFiles\\all_classes_del.txt");
 		try {
 			LargeFileSplit.splitTextFiles(bigFile, 100);
 		} catch (IOException e) {

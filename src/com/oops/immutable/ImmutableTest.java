@@ -19,14 +19,20 @@ package com.oops.immutable;
  */
 public class ImmutableTest {
 
+    /**
+     * you can modify the address object alone, but address within ImmEmployee object can't, as because it is immutable.
+     */
     public static void main(String[] args) {
         // used defensive copy, to make it immutable
         Address opAddress = new Address("Cunningham Road", 560052);
-        Employee op = new Employee(100, opAddress);
+        ImmEmployee op = new ImmEmployee(100, opAddress);
         System.out.println("employee op details: " + op);
 
         // will not make impact, as reference data gets copied defensively
         opAddress.setStreetName("MG Road");
+        
+        // security breach - handle it carefully
+        op.getAddress().setStreetName("MG Road");
 
         System.out.println("after update, employee op details: " + op);
     }
