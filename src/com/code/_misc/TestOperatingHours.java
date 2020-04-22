@@ -11,11 +11,6 @@ import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-*//**
- * @author Hemant S
- * @created 15-Sep-2016
- * @vcsid $Id: $
- *//*
 public class TestOperatingHours {
     public static void main (String[] args){
         

@@ -1,16 +1,9 @@
 package com.code._misc;
-/**
- * Copyright (c) 2016 GT Nexus. All Rights Reserved.
- */
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
-/**
- * @author oprakash
- * @created 25-Aug-2016
- * @vcsid $Id: $
- */
 public class LongToDate {
 
 

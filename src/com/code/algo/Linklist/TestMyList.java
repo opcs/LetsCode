@@ -7,11 +7,11 @@ public class TestMyList {
 		
 		System.out.println("----------start--------------");
 		
-		names.add("opcs");
-		/*
-		 * names.add("seerat"); names.add("Munna"); names.add("bholu");
-		 * names.add("suresh");
-		 */
+		names.addAtEnd("opcs");
+		names.addAtEnd("kkcs");
+		  names.addAtEnd("seerat"); names.addAtEnd("Munna"); names.addAtEnd("bholu");
+		  names.addAtEnd("suresh");
+		 
 		System.out.println("----------end--------------");
 		System.out.println(names.toString());
 		

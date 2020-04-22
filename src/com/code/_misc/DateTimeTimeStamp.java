@@ -5,15 +5,6 @@ import com.tradecard.framework.primitive.DateStamp;
 import com.tradecard.framework.primitive.TimeOfDayStamp;
 import com.tradecard.framework.primitive.Timestamp;
 
-*//**
- * Copyright (c) 2016 GT Nexus. All Rights Reserved.
- *//*
-
-*//**
- * @author Brijesh S
- * @created 15-Sep-2016
- * @vcsid $Id: $
- *//*
 public class DateTimeTimeStamp {
 
     public static void main(String[] args) {

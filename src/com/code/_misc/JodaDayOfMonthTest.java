@@ -1,19 +1,9 @@
 package com.code._misc;
-/**
- * Copyright (c) 2016 GT Nexus. All Rights Reserved.
- */
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.TimeZone;
 /*import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;*/
 
-/**
- * @author oprakash
- * @created 05-Oct-2016
- * @vcsid $Id: $
- */
 public class JodaDayOfMonthTest {
 
     public static void main(String[] args) {

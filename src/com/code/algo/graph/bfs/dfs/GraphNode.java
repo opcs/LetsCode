@@ -1,6 +1,3 @@
-/**
- * Copyright (c) 2017 GT Nexus. All Rights Reserved.
- */
 package com.code.algo.graph.bfs.dfs;
 
 public class GraphNode {

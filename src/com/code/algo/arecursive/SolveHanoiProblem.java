@@ -1,4 +1,4 @@
-package com.code.algo.recursive;
+package com.code.algo.arecursive;
 
 public class SolveHanoiProblem {
 

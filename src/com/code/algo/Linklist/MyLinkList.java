@@ -8,34 +8,42 @@ public class MyLinkList<E> {
 		
 	}
 	
-	public void add(E item) {
-		MyNode<E> node = new MyNode(item);
+	public void addFirst(E item) {
+		MyNode<E> newNode = new MyNode(item);
 		MyNode<E> bnode=head;
 		
 		if(head!=null) {
-			 node.next = head;
-			 head=node;
+			 newNode.next = head;
+			 head=newNode;
 			
 		}else {
-			head=node;
+			head=newNode;
+		}
+	}
+	
+	public void addAtEnd(E item) {
+		MyNode<E> newNode = new MyNode(item);
+		MyNode<E> fnode=head;
+		
+		if(fnode!=null) {
+			while(fnode.next!=null) {
+				fnode=fnode.next;
+			}
+			 fnode.next = newNode;
+			 newNode.next=null;
+			
+		}else {
+			fnode=newNode;
+			head=fnode;
 		}
 	}
 	
 	public void remove(E item) {
-		MyNode<E> current=head;
-		System.out.println("current: " + current.item);
-		if(current==null) return ;
 		
-		MyNode<E> nextNode = current.next;
-		while(current!=null) {
-			if(current.item==item) {
-				System.out.println("item matched: " + nextNode.item);
-				current=nextNode;
-			}
-				current=nextNode;
-		}
 	}
 	
+
+
 	public String toString() {
 		StringBuilder sb= new StringBuilder();
 		MyNode<E> node = new MyNode();
@@ -51,31 +59,19 @@ public class MyLinkList<E> {
 	private static class MyNode<E> {
         E item;
         MyNode<E> next;
-
-        public E getItem() {
-			return item;
+        
+        public MyNode() {
 		}
-
-		public void setItem(E item) {
-			this.item = item;
-		}
-
-		public MyNode<E> getNext() {
-			return next;
-		}
-
-		public void setNext(MyNode<E> next) {
-			this.next = next;
-		}
-
-		MyNode(E element) {
+        
+        MyNode(E element) {
             this.item = element;
             this.next = null;
         }
 
-		public MyNode() {
-			// TODO Auto-generated constructor stub
+        public E getItem() {
+			return item;
 		}
+		
     }
 
 }

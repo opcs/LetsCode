@@ -1,7 +1,5 @@
 package com.code._misc;
-/**
- * Copyright (c) 2016 GT Nexus. All Rights Reserved.
- */
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -11,11 +9,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-/**
- * @author oprakash
- * @created 14-Sep-2016
- * @vcsid $Id: $
- */
 public class LargeFileSplitLogic {
 
     public static void splitTextFiles(Path bigFile, int maxRows) throws IOException {

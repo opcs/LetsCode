@@ -1,15 +1,7 @@
 package com.code._misc;
-/**
- * Copyright (c) 2017 GT Nexus. All Rights Reserved.
- */
 import java.util.HashMap;
 import java.util.Set;
 
-/**
- * @author oprakash
- * @created 04-Jan-2017
- * @vcsid $Id: $
- */
 public class FindCountOfChar {
     public static void main(String[] args) {
         HashMap<Character, Integer> charCountMap = new HashMap<Character, Integer>();
