@@ -1,6 +1,6 @@
 package com.code.algo.Linklist;
 
-public class AddTwoNumberLinkedList {
+public class AddTwoNumber {
 	private static Node head;
 
 	private static class Node {
@@ -89,7 +89,7 @@ public class AddTwoNumberLinkedList {
 	}
 
 	public static void main(String[] args) {
-		AddTwoNumberLinkedList list = new AddTwoNumberLinkedList();
+		AddTwoNumber list = new AddTwoNumber();
 		// Creating a linked list
 		Node head1 = new Node(5);
 		list.addToTheLast(head1);
