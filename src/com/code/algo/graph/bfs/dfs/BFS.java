@@ -16,9 +16,10 @@ public class BFS {
             if (!visited[queue.get(0).getE()]) {
                 visited[queue.get(0).getE()] = true;
                 System.out.print(queue.get(0).getE() + " -> ");
+                // get list of connected node
                 List<GraphNode> li = g.graph.get(queue.get(0));
-                queue.remove(queue.get(0));
-                queue.addAll(li);
+                queue.remove(queue.get(0));   // remove visited node
+                queue.addAll(li);			// add neighbours node to visit next
             }
         }
         System.out.println();

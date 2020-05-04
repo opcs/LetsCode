@@ -1,7 +1,11 @@
-/**
- * Copyright (c) 2017 GT Nexus. All Rights Reserved.
- */
+
 package com.code.algo.tree;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class BinarySearchTree {
 
     public static TreeNode root;
@@ -179,11 +183,20 @@ public class BinarySearchTree {
           display(root.right);
        }
     }
+    
+   
+    
+   
     public static void main(String arg[]){
        BinarySearchTree b = new BinarySearchTree();
        b.insert(3);b.insert(8);
        b.insert(1);b.insert(4);b.insert(6);b.insert(2);b.insert(10);b.insert(9);
        b.insert(20);b.insert(25);b.insert(15);b.insert(16);
+       BinarySearchUtil util = new BinarySearchUtil(root);
+       util.displayLeftView();    // [3, 1, 2, 6, 15, 16]
+       
+       int width = util.highestWidthCount(b.root);    // 3 expected
+       System.out.println("max width of tree: " + width);
        System.out.println("Original Tree : ");
        b.display(root);      
        System.out.println("");
