@@ -1,8 +1,9 @@
 package com.op.letscheckfinal;
 
-//can't extend as RSF, as it is immutable
-public class EnggRegStudent extends RegularStudentFinal{
+//can't extend RSF, as it is immutable - Ctor private
+// public class EnggRegStudent extends RegularStudentFinal{
 
+public class EnggRegStudent{
 	private long phone;
 	private String branch;
 	
