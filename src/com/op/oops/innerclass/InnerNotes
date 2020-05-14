@@ -1,0 +1,7 @@
+The main danger with inner classes is that they have access to the parent’s private fields, 
+which can lead to unexpected side-effects. 
+
+(non-static) inner classes can manipulate private state and that’s dangerous
+
+So I think non-static inner classes should always be private or anonymous, 
+Problem is that then inner class can’t then be tested directly.
