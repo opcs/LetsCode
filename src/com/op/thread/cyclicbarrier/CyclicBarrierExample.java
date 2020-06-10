@@ -1,6 +1,3 @@
-/**
- * Copyright (c) 2017 GT Nexus. All Rights Reserved.
- */
 package com.op.thread.cyclicbarrier;
 
 import java.util.concurrent.BrokenBarrierException;
@@ -8,18 +5,13 @@ import java.util.concurrent.CyclicBarrier;
 
 public class CyclicBarrierExample {
     public static void main(String[] args) {
-        Runnable task1 = new Runnable() {
-            public void run() {
-                System.out.println("task 1 executed ");
-            }
-        };
-        Runnable task2 = new Runnable() {
-            public void run() {
-                System.out.println("task 2 executed ");
-            }
-        };
-        CyclicBarrier barrier1 = new CyclicBarrier(2, task1); // no new thread, directly call task1.run()
-        CyclicBarrier barrier2 = new CyclicBarrier(2, task2);
+        Runnable barrierAction1 = ()->System.out.println("task 1 executed ");
+        Runnable barrierAction2 = ()->System.out.println("task 2 executed ");
+        
+        int barrierParties = 2;
+		CyclicBarrier barrier1 = new CyclicBarrier(barrierParties, barrierAction1); // no new thread, directly call task1.run()
+        CyclicBarrier barrier2 = new CyclicBarrier(barrierParties, barrierAction2);
+        
         CyclicBarrierTask barrierRunnable1 = new CyclicBarrierTask(barrier1, barrier2);
         CyclicBarrierTask barrierRunnable2 = new CyclicBarrierTask(barrier1, barrier2);
         new Thread(barrierRunnable1).start();
@@ -39,8 +31,9 @@ class CyclicBarrierTask implements Runnable {
         try {
             Thread.sleep(1000);
             System.out.println(Thread.currentThread().getName() + " waiting at barrier 1");
-            this.barrier1.await();
-
+            this.barrier1.await();     
+          //wait untill both parties tasks has to be completed at this barrier then proceed for next cycle
+            
             Thread.sleep(1000);
             System.out.println(Thread.currentThread().getName() + " waiting at barrier 2");
             this.barrier2.await();

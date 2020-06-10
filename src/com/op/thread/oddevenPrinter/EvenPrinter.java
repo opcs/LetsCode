@@ -6,9 +6,9 @@ package com.op.thread.oddevenPrinter;
 public class EvenPrinter implements Runnable {
 
     private int max;
-    private OddEvenPrinter printer;
+    private Printer printer;
 
-    public EvenPrinter(OddEvenPrinter printer, int maxValue) {
+    public EvenPrinter(Printer printer, int maxValue) {
         this.printer = printer;
         this.max = maxValue;
     }

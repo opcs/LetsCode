@@ -1,27 +1,44 @@
-/**
- * Copyright (c) 2017 GT Nexus. All Rights Reserved.
- */
 package com.op.thread.prodconsumer;
 
-import java.util.Map;
+import java.util.List;
 
-/**
- * @author oprakash
- * @created 10-Jan-2017
- * @vcsid $Id: $
- */
-public class Producer implements Runnable {
+public class Producer implements Runnable{
+	//private BlockingQueue<Integer> sharedQue = new ArrayBlockingQueue<>(10);
+	private List<Integer> sharedBananas;// =new CopyOnWriteArrayList<Integer>();
+	private int size;
+	
+	public Producer(List<Integer> sharedBananas, int size) {
+		this.sharedBananas = sharedBananas;
+		this.size=size;
+	}
 
-    private Map<String, String> nameValueMap;
 
-    public Producer(Map<String, String> nameValueMap) {
-        this.nameValueMap = nameValueMap;
-    }
+	@Override
+	public void run() {
+		while(true){
+			try {
+				withWaitNotify();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
-    @Override
-    public void run() {
-        nameValueMap.put("", "");
 
-    }
+	private void withWaitNotify() throws InterruptedException {
+		
+		synchronized (sharedBananas) {
+			if (sharedBananas.size() < size) {
+				sharedBananas.add(1);
+				System.out.println("created banana..... " + sharedBananas.get(sharedBananas.size() - 1));
+				sharedBananas.notifyAll();
+
+			} else {
+				System.out.println("wait - queue is full.....");
+				sharedBananas.wait();
+			}
+		}
+
+	}
 
 }

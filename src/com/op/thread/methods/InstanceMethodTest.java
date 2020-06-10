@@ -1,7 +1,8 @@
 package com.op.thread.methods;
 
 /*
- * @author opcsCan two instances of MyClass call instance method foo at the same time? It depends. 
+ * @author opcs
+ * Can two instances of MyClass call instance method foo at the same time? It depends. 
  * If both are same instance of MyObj then no. But, 
  * if they hold different references, then the answer is yes. 
  * 
@@ -48,7 +49,6 @@ public class InstanceMethodTest {
 
 		InstanceMethodTest obj2 = new InstanceMethodTest();
 		MyThread thread2 = new MyThread("2", obj2);
-		System.out.println("....starting thread 2....");
 		thread2.start();
 
 		//2. same instance - only one is allowed to call, other has to wait
@@ -59,7 +59,7 @@ public class InstanceMethodTest {
 		MyThread thread4 = new MyThread("4", obj34);
 		thread4.start();
 		
-		//3. if method is static - it synchronized on the class lock
+		
 		
 
 	}

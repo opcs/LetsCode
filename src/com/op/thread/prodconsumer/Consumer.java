@@ -1,27 +1,42 @@
-/**
- * Copyright (c) 2017 GT Nexus. All Rights Reserved.
- */
 package com.op.thread.prodconsumer;
 
-import java.util.Map;
+import java.util.List;
 
-/**
- * @author oprakash
- * @created 10-Jan-2017
- * @vcsid $Id: $
- */
-public class Consumer implements Runnable {
+public class Consumer implements Runnable{
 
-    private Map<String, String> nameValueMap;
+//private BlockingQueue<Integer> sharedQue = new ArrayBlockingQueue<>(10);
+private List<Integer> sharedBananas;//=new CopyOnWriteArrayList<Integer>();//ArrayList<Integer>(100);
+private int size;
+	
+	public Consumer(List<Integer> sharedBananas, int size) {
+		this.sharedBananas = sharedBananas;
+		this.size=size;
+	}
+	@Override
+	public void run() {
+		
+		while(true){
+			try {
+				withWaitNotify();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
+	}
 
-    public Consumer(Map<String, String> nameValueMap) {
-        this.nameValueMap = nameValueMap;
-    }
-
-    @Override
-    public void run() {
-        nameValueMap.put("", "");
-
-    }
-
+	private void withWaitNotify() throws InterruptedException {
+		synchronized (sharedBananas) {
+			if (sharedBananas.size() > 0) {
+				Integer take = sharedBananas.remove(sharedBananas.size() - 1);
+				System.out.println("eat banana if present... " + take);
+				sharedBananas.notifyAll();
+			} else {
+				System.out.println("wait consuming- empty queue....");
+				sharedBananas.wait();
+			}
+		}
+	}
 }

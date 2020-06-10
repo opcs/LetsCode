@@ -35,12 +35,12 @@ public class AddTwoNumber {
 		System.out.println();
 	}
 
-	public static Node reverseLinkedList(Node node) {
+	public static Node reverseRecursively(Node node) {
 		if (node == null || node.next == null) {
 			return node;
 		}
 
-		Node remaining = reverseLinkedList(node.next);
+		Node remaining = reverseRecursively(node.next);
 		node.next.next = node;
 		node.next = null;
 		return remaining;
@@ -109,15 +109,15 @@ public class AddTwoNumber {
 		System.out.print("Number 2:  ");
 		list.printList(head2);
 		// Reversing first linkedList
-		head1 = reverseLinkedList(head1);
+		head1 = reverseRecursively(head1);
 
 		// Reversing second linkedList
-		head2 = reverseLinkedList(head2);
+		head2 = reverseRecursively(head2);
 
 		// function to find sum of two linkedlist represent by number
 		Node result = list.findSumOfNumbers(head1, head2);
 		// Reverse the above linkedlist to get actual sum
-		result = reverseLinkedList(result);
+		result = reverseRecursively(result);
 		System.out.print("Sum:  ");
 		list.printList(result);
 	}

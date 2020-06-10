@@ -22,7 +22,7 @@ public class CustomBFSTraverse {
 		List<Integer> nodes = new ArrayList<>();
 		int size = 1;
 		while (!queue.isEmpty()) {
-			size = queue.size();
+			size = queue.size();    // each level size
 			nodes.add(queue.peek().getData());
 			for (int i = 0; i < size; i++) {
 				TreeNode head = queue.poll();

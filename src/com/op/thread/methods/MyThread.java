@@ -15,7 +15,7 @@ public class MyThread extends Thread{
 	
 	public void run() {
 		if(myobj!=null)
-			myobj.foo(name);
+			myobj.staticfoo(name);
 		else if(name.equals("1")) StaticMethodTest.staticfoo(name);
 		else if(name.equals("2")) StaticMethodTest.staticBar(name);
 			
