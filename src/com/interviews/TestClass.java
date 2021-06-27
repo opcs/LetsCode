@@ -4,13 +4,14 @@ import java.io.*;
 import java.util.*;
 
 public class TestClass {
-	static int minParkingSpaces(int[][] parkingStartEndTimes) {
-          // YOUR CODE HERE
-		 Random random = new Random();
-		    return random.nextInt(parkingStartEndTimes.length);
-		
-
-	}
+	/*
+	 * static int minParkingSpaces(int[][] parkingStartEndTimes) { // YOUR CODE HERE
+	 * Random random = new Random(); return
+	 * random.nextInt(parkingStartEndTimes.length);
+	 * 
+	 * 
+	 * }
+	 */
 
 	// DO NOT MODIFY ANYTHING BELOW  for implemengtation THIS LINE!!
 	/* input format
@@ -18,7 +19,13 @@ public class TestClass {
 	 */
 
 	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		TreeMap obj = new TreeMap();
+		obj.put("A", new Integer(1));
+		obj.put("B", new Integer(2));
+		System.out.println(obj.entrySet());
+	}	
+		/*BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		PrintWriter wr = new PrintWriter(System.out);
 		int n = Integer.parseInt(br.readLine().trim());
 		int[][] parkingStartEndTimeList = new int[n][2];
@@ -35,5 +42,5 @@ public class TestClass {
 
 		wr.close();
 		br.close();
-	}
+	}*/
 }

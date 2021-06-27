@@ -13,7 +13,7 @@ import java.util.concurrent.CountDownLatch;
  * Below is a simple example. After the Decrementer has called countDown() 3 times on the CountDownLatch, the waiting Waiter is
  * released from the await() call.
  */
-public class CountDownLatchExample {
+public class CountDownLatchExample2 {
     public static void main(String[] args) {
         CountDownLatch latch = new CountDownLatch(3);
 

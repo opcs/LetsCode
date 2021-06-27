@@ -1,0 +1,32 @@
+mergesort(int[] array, int low, int high) {
+  if(low < high) {
+    // Calculate the middle position
+    int middle = (low + high) / 2
+    // Apply mergesort on the first half
+    mergesort(array, low, middle)
+    // Apply mergesort on the second half
+    mergesort(array, middle + 1, high)
+    // Merge the two halves
+    // in order to get an array sorted from low to high
+    merge(array, low, middle, high)
+  }
+}
+
+in Java 7 we got a new toy to manage thread pools: the so-called fork/join framework and its core class ForkJoinPool.
+The idea of the fork/join pattern is also based on the divide and conquer principle: 
+forking a big task into smaller chunks and aggregating the results.
+Despite being based on AbstractExecutorService (just like ExecutorService), there is an important difference between both: 
+their internal scheduling algorithm.
+ExecutorService is based on a work-sharing algorithm. Simply said, a queue is shared by all the threads of the pool. 
+Each time a thread is idle, it will do a lookup in this queue to retrieve a task to be done.
+
+On the other hand, ForkJoinPool is based on a work-stealing algorithm. An idle thread can query other threads of the pool 
+(not directly, in a work-stealing world each thread has also its own local queue) and steal from them a task.
+
+Each sub-call could be changed to spawn a new sub-task. The created sub-tasks will be available to other idle threads 
+because of work-stealing. This would result in an equitable distribution of the workload between the different threads of the pool.
+
+n the previous example, the ForkJoinPool was created with numberOfAvailableCores - 1. This value is also the default number of threads 
+when we use the parallel stream API. Why - 1? Because we need to keep one thread available for performing the fork/join job.
+
+What is the best value for MAX? The Java Arrays library set this value to 1<<13 which is equals to 8192.

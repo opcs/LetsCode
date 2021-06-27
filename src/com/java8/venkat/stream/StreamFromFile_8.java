@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class StreamFromFile_8 {
 
 	public static void main(String[] args) throws IOException {
-		// 9. Stream rows from test file, sort, filter and print
+		// 9. Stream of rows from test file, sort, filter and print
 		Stream<String> rows = Files.lines(Paths.get("F:/oxygen-workspace/java8/src/testfile.txt"));
 		
 		//rows.sorted()

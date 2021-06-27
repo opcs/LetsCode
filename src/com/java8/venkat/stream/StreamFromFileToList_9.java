@@ -11,7 +11,7 @@ public class StreamFromFileToList_9 {
 
 	public static void main(String[] args) throws IOException {
 		// 9. Stream rows from test file and save to list
-		Stream<String> rows = Files.lines(Paths.get("F:/oxygen-workspace/java8/src/testfile.txt"));
+		Stream<String> rows = Files.lines(Paths.get("C:\\Users\\opcs\\git\\LetsCode\\src\\testfile.txt"));
 		
 		List<String> parallelString = rows.sorted()
 		.filter(row->row.contains("parallel"))

@@ -2,31 +2,43 @@ package com.op.algo.Linklist;
 
 public class MyLinkList<E> {
 
-	MyNode<E> head;
+	Node<E> head;
 
-	public MyNode<E> getHead() {
+	public Node<E> getHead() {
 		return head;
+	}
+	
+	public void iterativeReverse() {
+		Node prev=null, current=head;
+		
+		while(current!=null) {
+			Node<E> next = current.next;   // bkp
+			current.next=prev;
+			prev=current;
+			current=next;
+		}
+		head=prev;
+		System.out.println(toString());
 	}
 
 	public void reverse() {
 		head = reverse(this.head);
 		System.out.println(toString());
-		;
 	}
 
-	private MyNode<E> reverse(MyNode<E> head) {
+	private Node<E> reverse(Node<E> head) {
 
 		if (head == null || head.next == null)
 			return head;
-		MyNode<E> remaining = reverse(head.next);
+		Node<E> remaining = reverse(head.next);
 		head.next.next = head;
 		head.next = null;
 		return remaining;
 	}
 
 	public void addFirst(E item) {
-		MyNode<E> newNode = new MyNode(item);
-		MyNode<E> bnode = head;
+		Node<E> newNode = new Node(item);
+		Node<E> bnode = head;
 
 		if (head != null) {
 			newNode.next = head;
@@ -38,8 +50,8 @@ public class MyLinkList<E> {
 	}
 
 	public void addAtEnd(E item) {
-		MyNode<E> newNode = new MyNode(item);
-		MyNode<E> fnode = head;
+		Node<E> newNode = new Node(item);
+		Node<E> fnode = head;
 
 		if (fnode != null) {
 			while (fnode.next != null) {
@@ -62,8 +74,8 @@ public class MyLinkList<E> {
 		}
 
 		// 2. intermediate node remove
-		MyNode<E> temp = head;
-		MyNode<E> prev = null;
+		Node<E> temp = head;
+		Node<E> prev = null;
 		while (temp.item != item) {
 			prev = temp;
 			temp = temp.next;
@@ -72,14 +84,14 @@ public class MyLinkList<E> {
 			prev.next = temp.next;
 		} else {
 			// 3 end node to remove
-			prev.next = null;
+			prev.next = null; 
 		}
 		temp = null;
 	}
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		MyNode<E> node = new MyNode();
+		Node<E> node = new Node();
 		node = head;
 		while (node != null) {
 			sb.append(node.getItem());
@@ -89,14 +101,14 @@ public class MyLinkList<E> {
 		return sb.toString();
 	}
 
-	private static class MyNode<E> {
+	private static class Node<E> {
 		E item;
-		MyNode<E> next;
+		Node<E> next;
 
-		public MyNode() {
+		public Node() {
 		}
 
-		MyNode(E element) {
+		Node(E element) {
 			this.item = element;
 			this.next = null;
 		}

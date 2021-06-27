@@ -1,4 +1,4 @@
-package com.op.letscode.singleton;
+package com.op.singleton;
 
 public class EagerLoadSingleton {
 

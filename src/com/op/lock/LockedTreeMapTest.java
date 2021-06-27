@@ -1,4 +1,4 @@
-package com.op.letscode.lock.collections;
+package com.op.lock;
 
 public class LockedTreeMapTest {
 

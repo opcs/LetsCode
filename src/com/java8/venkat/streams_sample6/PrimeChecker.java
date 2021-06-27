@@ -2,10 +2,10 @@ package com.java8.venkat.streams_sample6;
 
 import java.util.stream.IntStream;
 
-public class Sample11 {
+public class PrimeChecker {
 	
 	public static void main(String[] args) {
-		System.out.println(isPrime(22));
+		System.out.println(isPrime(29));
 	}
 
 		/*public static boolean isPrime(int number) {
@@ -23,7 +23,7 @@ public class Sample11 {
 	public static boolean isPrime(int number) {
 
 		return number>1 && 
-				IntStream.range(2, number)
+				IntStream.range(2, (int)Math.sqrt(number))
 				.anyMatch(i->number %i==0);
 		
 	}

@@ -11,7 +11,7 @@ public class SolveHanoiProblem {
 		}
 		
 		solveHanoi(n-1, from, to, via);
-		System.out.println("plate" + n+ " from "+ from + " to "+ to);
+		System.out.println("plate" + n+ " from "+ from + " to "+ via);
 		solveHanoi(n-1, via, from, to);
 	}
 }

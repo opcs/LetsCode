@@ -1,15 +1,15 @@
-package com.op.ds;
+package com.op.algo.Linklist;
 
-public class LLNode {
+public class ListNode {
 private int data;
-private LLNode next;
+private ListNode next;
 
 
-public LLNode(int data) {
+public ListNode(int data) {
 	this.data = data;
 	this.next = null;
 }
-public LLNode() {
+public ListNode() {
 }
 public int getData() {
 	return data;
@@ -17,10 +17,10 @@ public int getData() {
 public void setData(int data) {
 	this.data = data;
 }
-public LLNode getNext() {
+public ListNode getNext() {
 	return next;
 }
-public void setNext(LLNode next) {
+public void setNext(ListNode next) {
 	this.next = next;
 }
 

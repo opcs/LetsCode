@@ -1,13 +1,10 @@
-package com.op.letscode.lock.collections;
+package com.op.lock;
 
-import java.util.HashMap;
-import java.util.TreeMap;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-public class LockedHashMap extends HashMap implements RWLock{
+
+public class RWLockImpl implements RWLock{
 
 	ReadWriteLock m_rwlock = new ReentrantReadWriteLock();
 
@@ -34,5 +31,4 @@ public class LockedHashMap extends HashMap implements RWLock{
 		m_rwlock.writeLock().unlock();
 		
 	}
-
 }

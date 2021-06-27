@@ -19,8 +19,9 @@ public class TestMyList {
 		System.out.println(names.toString());
 		
 		
-		 names.reverse();
 		
+		names.iterativeReverse();
+		 names.reverse();
 		
 	}
 

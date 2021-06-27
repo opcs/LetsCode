@@ -65,8 +65,7 @@ pseudocode:
             end if
          end while
       END DFS()
------------------------------------------------------------------------------------
-	  
+-----------------------------------------------------------------------------------  
 	  BFS (G, s)     //Where G is the graph and s is the source node
       let Q be queue.
       Q.enqueue( s ) //Inserting s in queue until all its neighbour vertices are marked.

@@ -18,10 +18,6 @@ import java.util.concurrent.ConcurrentHashMap;
  * How to add a page to the list:
  * a. If the cache is not full, add the new page to the start of the list.
  * b. If the cache is full, remove the last node of the linked list and move the new page to the start of the list.
- * 
- * @author oprakash
- * @created 16-Jan-2017
- * @vcsid $Id: $
  */
 public class LRUCache {
 

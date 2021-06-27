@@ -19,14 +19,14 @@ public class SqrootOf100Primes_2 {
 		/*List<Double> sqrtOff100Prime = new ArrayList<>();
 		int index=1;
 		while(sqrtOff100Prime.size()<100) {
-			if(Sample11.isPrime(index)) {
+			if(PrimeChecker.isPrime(index)) {
 				sqrtOff100Prime.add(Math.sqrt(index));
 			}
 			index++;
 		}*/
 		List<Double> sqrtOff100Prime=	
 		Stream.iterate(1, e->e+1)
-		.filter(Sample11::isPrime)
+		.filter(PrimeChecker::isPrime)
 		.map(Math::sqrt)
 		.limit(100)
 		.collect(Collectors.toList());

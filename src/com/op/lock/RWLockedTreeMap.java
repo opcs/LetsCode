@@ -1,4 +1,4 @@
-package com.op.letscode.lock.collections;
+package com.op.lock;
 
 import java.util.TreeMap;
 import java.util.concurrent.locks.Lock;

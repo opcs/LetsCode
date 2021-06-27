@@ -1,6 +1,5 @@
-/**
- * Copyright (c) 2017 GT Nexus. All Rights Reserved.
- */
+
+
 package com.op.algo.sort;
 
 // Java program to find k'th smallest element in expected linear time

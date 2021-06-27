@@ -1,4 +1,4 @@
-package com.op.ds;
+package com.op.algo.Linklist;
 
 import java.util.Arrays;
 
