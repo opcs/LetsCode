@@ -1,4 +1,4 @@
-package com.op.algo.tree;
+package com.op.algo.atree;
 
 public class TreeNode {
 

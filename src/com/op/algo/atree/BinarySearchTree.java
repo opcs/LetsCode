@@ -1,5 +1,5 @@
 
-package com.op.algo.tree;
+package com.op.algo.atree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -192,6 +192,7 @@ public class BinarySearchTree {
        b.insert(3);b.insert(8);
        b.insert(1);b.insert(4);b.insert(6);b.insert(2);b.insert(10);b.insert(9);
        b.insert(20);b.insert(25);b.insert(15);b.insert(16);
+       
        CustomBFSTraverse util = new CustomBFSTraverse(root);
        util.displayLeftView();    // [3, 1, 2, 6, 15, 16]
        

@@ -1,14 +1,14 @@
-package com.op.algo.tree;
+package com.op.algo.atree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class CustomBFSTraverse {
+public class CustomDFSTraverse {
 	TreeNode root;
 
-	public CustomBFSTraverse(TreeNode root) {
+	public CustomDFSTraverse(TreeNode root) {
 		this.root = root;
 	}
 

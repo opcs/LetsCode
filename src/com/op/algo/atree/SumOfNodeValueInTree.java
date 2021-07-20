@@ -1,4 +1,4 @@
-package com.op._misc;
+package com.op.algo.atree;
 
 public class SumOfNodeValueInTree {
 	public static void main(String[] args) {

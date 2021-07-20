@@ -60,6 +60,14 @@ public class CollectorsEx {
 		 * SIENCE=[12.0], LITERATURE=[50.0]}, Davis={MATH=[35.0], GEOGRAPHY=[37.0],
 		 * SIENCE=[12.9]}}
 		 */
+		
+		Map<String, Student> nameStudMap = new HashMap<>();
+		students.stream().forEach(s->{
+			nameStudMap
+			.computeIfAbsent(s.getName(), st-> new Student(s.getName(),s.getSubject(),s.getMarks()) );
+		});
+		System.out.println("-----------Last----------");
+		nameStudMap.values().stream().forEach(s->System.out.println(s.getMarks()));
 
 	}
 
